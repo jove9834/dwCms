@@ -1,8 +1,32 @@
 .editForm{
-    position:absolute; top:0px; left: 0px; right: 0px; bottom:0px; width: 100%; background: #fff; z-index: 9999999;
-    padding: 20px; overflow: auto;
+    position:absolute; top:0px; left: 0px; right: 0px; bottom:0px; width: 100%; background: #fff; z-index:9;
+    padding: 20px; overflow: hidden;
     .cancelEdit{
-        position: absolute; right:30px; top: 30px; color: #DD1100; font-size: 14px; z-index: 9;
+        position: absolute; right:30px; top: 10px; color: #DD1100; font-size: 14px; z-index: 9;
     }
+    .el-tabs__content{ position: absolute; top:80px; left: 0px; right: 0px; bottom:0px; padding-bottom: 30px; overflow: auto;}
+}
+.li-search{
+    .li-search-content{
+        &.li-hnone{height: 53px;}
+        border-top-left-radius: 5px; border-top-right-radius: 5px; border:1px solid #F0F0F0; padding: 5px; overflow: hidden;
+    }
+    
+    .el-date-editor,button{ margin-top: 5px;}
+    .el-input,.el-select,.buttombox{ width: 190px;}
+    .el-date-editor--datetimerange{ width: 384px;}
+    .buttombox{ display: inline-block;}
+    .el-button+.el-button{ margin-left: 6px;}
+    .minbotton{
+        .el-button{ padding-left: 14px; padding-right: 15px;}
+    }
+    .showMore{color: #F08047; float: right; margin-top:15px; margin-right: 10px; cursor:pointer;}
+    .showMore:hover{color: #EE9900; }
+//  height:45px; overflow: hidden;
+}
+.moresearch{ font-size: 14px;
+    &:hover{ cursor: pointer;}
+    padding:0px 5px 5px 5px; position: relative; text-align: left; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;
+    background:#F0F0F0;
 }
 

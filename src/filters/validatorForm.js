@@ -75,12 +75,12 @@ export function checkForm(rule, value, callback){
             }else{
                 retu = {msg:'请输入正确数字',code:false}
             }
-            
-            if(rule.maxnum > value){
-                retu = {msg:'输入的数字不能大于' + rule.mnum ,code:false}
+            value = parseFloat(value);
+            if(rule.maxnum < value){
+                retu = {msg:'输入的数字不能大于' + rule.maxnum ,code:false}
             }
             if(rule.minnum > value){
-                retu = {msg:'输入的数字不能小于' + rule.mnum ,code:false}
+                retu = {msg:'输入的数字不能小于' + rule.minnum ,code:false}
             }
             break;
         case 'Email'://Email正则
@@ -211,7 +211,12 @@ export function checkForm(rule, value, callback){
             
             break;
         default:
-            console.log('没有需要验证的');
+            if(rule.required && value != ''){
+                retu = {msg:'符合规则',code:true}
+            }else{
+                retu = {msg:'不能为空',code:false}
+            }
+            break;
     }
     if(rule.min && value.length < rule.min){
          retu = {msg:'字符最少需要'+rule.min+'位',code:false}
@@ -224,5 +229,7 @@ export function checkForm(rule, value, callback){
     } else {
         callback()
     }
+    
+    //console.log(11111);
 }
 
